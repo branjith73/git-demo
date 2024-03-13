@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function register() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Perform validation checks on the input fields
+            if (name === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+            if (email === "") {
+                alert("Please enter your email.");
+                return false;
+            }
+            if (password === "") {
+                alert("Please enter a password.");
+                return false;
+            }
+
+            // Display the submitted information
+            alert("Name: " + name + "\nEmail: " + email + "\nPassword: " + password);
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form onsubmit="return register()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
